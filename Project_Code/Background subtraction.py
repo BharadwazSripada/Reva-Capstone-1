@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[13]:
-
-
-#This code is for performing Image subtraction when a background image and live image is given
-
-
-# In[2]:
-
-
 import matplotlib.pyplot as plt
 from IPython.display import Image,display
 import pathlib
@@ -17,10 +5,6 @@ import os
 import glob
 import cv2
 import numpy as np
-
-
-# In[3]:
-
 
 
 def preprocess_image(image):
@@ -51,9 +35,6 @@ def preprocess_image(image):
     return(image)
 
 
-# In[4]:
-
-
 def contours(img_1,img_2):
     
     img1 = preprocess_image(img_1)
@@ -82,82 +63,37 @@ def contours(img_1,img_2):
     return(img2)
 
 
-# In[11]:
-
-
 img_2feet = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_6feet.jpg')
 img_2feet_object = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet_object.jpg')
 
 
-# In[12]:
-
-
 Final_Image = (contours(img_2feet,img_2feet_object))
+plt.imshow(Final_Image)
+plt.show()
+'''
 path = 'C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\'
 cv2.imwrite(os.path.join(path , 'Final_Output1.jpg'), Final_Image)
-
-
-# In[23]:
-
 
 img_4feet = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet.jpg')
 img_2feet_object = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet_object.jpg')
 
-
-# In[24]:
-
-
 plt.imshow(contours(img_4feet,img_2feet_object))
-
-
-# In[25]:
-
 
 img_6feet = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet.jpg')
 img_2feet_object = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet_object.jpg')
 
-
-# In[26]:
-
-
 plt.imshow(contours(img_6feet,img_2feet_object))
-
-
-# In[27]:
-
 
 img_6feet = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet.jpg')
 img_2feet_object = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\Image_2feet_addl_objects.jpg')
 
-
-# In[32]:
-
-
 plt.imshow(contours(img_6feet,img_2feet_object))
-
-
-# In[5]:
-
 
 bck_image = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Research project\\Image subtraction\\REVA pics\\Background1.jpg')
 obj_image = cv2.imread('C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Research project\\Image subtraction\\REVA pics\\Objects.jpg')
 
-
-# In[6]:
-
-
 Final_Image = (contours(bck_image,obj_image))
-
-
-# In[7]:
-
 
 path = 'C:\\Users\\212626492\\Box\\H drive\\2020_desktop_dec5\\REVA\\Capstone Project\\Images for back ground subtraction\\'
 cv2.imwrite(os.path.join(path , 'Final_Output.jpg'), Final_Image)
-
-
-# In[ ]:
-
-
-
-
+'''
